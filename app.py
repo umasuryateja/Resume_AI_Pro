@@ -1049,22 +1049,7 @@ p, span, label, div, .stMarkdown, h1, h2, h3, h4, li {
   padding: 1.1rem 1.3rem;
   color: #9CA3AF;
   font-size: .85rem;
-  line-height: 1.8;
-}
-.howbox strong {
-  color: #3B82F6;
-}
-
-.tab-content {
-  background: rgba(17, 24, 39, 0.6);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 0 16px 16px 16px;
-  padding: 1.5rem;
-  min-height: 300px;
-}
-
-/* ── ULTRA-RESPONSIVE MEDIA QUERIES ── */
+  line-he/* ── ULTRA-RESPONSIVE MEDIA QUERIES ── */
 
 /* Tablet Breakpoint (max-width: 1024px) */
 @media (max-width: 1024px) {
@@ -1074,6 +1059,7 @@ p, span, label, div, .stMarkdown, h1, h2, h3, h4, li {
   }
   
   /* Make 5 columns scorecard wrap elegantly into 3 or 2 columns grid */
+  div[data-testid="stHorizontalBlock"]:has(.kbox-v2),
   [data-testid="stHorizontalBlock"]:has(.kbox-v2),
   .stHorizontalBlock:has(.kbox-v2) {
     display: grid !important;
@@ -1081,7 +1067,12 @@ p, span, label, div, .stMarkdown, h1, h2, h3, h4, li {
     gap: 1rem !important;
     width: 100% !important;
   }
+  
+  div[data-testid="stHorizontalBlock"]:has(.kbox-v2) [data-testid="stColumn"],
+  div[data-testid="stHorizontalBlock"]:has(.kbox-v2) [data-testid="column"],
+  [data-testid="stHorizontalBlock"]:has(.kbox-v2) [data-testid="stColumn"],
   [data-testid="stHorizontalBlock"]:has(.kbox-v2) [data-testid="column"],
+  .stHorizontalBlock:has(.kbox-v2) [data-testid="stColumn"],
   .stHorizontalBlock:has(.kbox-v2) [data-testid="column"] {
     width: 100% !important;
     max-width: 100% !important;
@@ -1092,6 +1083,7 @@ p, span, label, div, .stMarkdown, h1, h2, h3, h4, li {
 /* Mobile landscape and generic screens (max-width: 768px) */
 @media (max-width: 768px) {
   /* Force Streamlit standard multi-column layout blocks to stack vertically and take 100% width */
+  div[data-testid="stHorizontalBlock"],
   [data-testid="stHorizontalBlock"],
   .stHorizontalBlock {
     flex-direction: column !important;
@@ -1099,10 +1091,16 @@ p, span, label, div, .stMarkdown, h1, h2, h3, h4, li {
     gap: 1.2rem !important;
     width: 100% !important;
   }
-  [data-testid="stHorizontalBlock"] [data-testid="column"],
-  .stHorizontalBlock [data-testid="column"],
+  
+  /* Target EVERY possible column div inside a horizontal block aggressively */
+  div[data-testid="stHorizontalBlock"] > div,
   [data-testid="stHorizontalBlock"] > div,
-  .stHorizontalBlock > div {
+  div[data-testid="stHorizontalBlock"] div[data-testid="stColumn"],
+  div[data-testid="stHorizontalBlock"] div[data-testid="column"],
+  [data-testid="stHorizontalBlock"] [data-testid="stColumn"],
+  [data-testid="stHorizontalBlock"] [data-testid="column"],
+  .stHorizontalBlock [data-testid="stColumn"],
+  .stHorizontalBlock [data-testid="column"] {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
@@ -1141,6 +1139,7 @@ p, span, label, div, .stMarkdown, h1, h2, h3, h4, li {
   }
   
   /* Responsive Scorecard Grid (1 column on small phones for perfect spacing and full-width) */
+  div[data-testid="stHorizontalBlock"]:has(.kbox-v2),
   [data-testid="stHorizontalBlock"]:has(.kbox-v2),
   .stHorizontalBlock:has(.kbox-v2) {
     display: grid !important;
@@ -1148,8 +1147,11 @@ p, span, label, div, .stMarkdown, h1, h2, h3, h4, li {
     gap: 0.9rem !important;
     width: 100% !important;
   }
-  [data-testid="stHorizontalBlock"]:has(.kbox-v2) [data-testid="column"],
-  .stHorizontalBlock:has(.kbox-v2) [data-testid="column"] {
+  
+  /* Target columns inside card grid to override vertical stacking block width */
+  div[data-testid="stHorizontalBlock"]:has(.kbox-v2) > div,
+  [data-testid="stHorizontalBlock"]:has(.kbox-v2) [data-testid="stColumn"],
+  [data-testid="stHorizontalBlock"]:has(.kbox-v2) [data-testid="column"] {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
