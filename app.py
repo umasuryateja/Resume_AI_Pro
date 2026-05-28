@@ -1074,75 +1074,102 @@ p, span, label, div, .stMarkdown, h1, h2, h3, h4, li {
   }
   
   /* Make 5 columns scorecard wrap elegantly into 3 or 2 columns grid */
-  [data-testid="stHorizontalBlock"]:has(.kbox-v2) {
+  [data-testid="stHorizontalBlock"]:has(.kbox-v2),
+  .stHorizontalBlock:has(.kbox-v2) {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 1rem !important;
-  }
-  [data-testid="stHorizontalBlock"]:has(.kbox-v2) > [data-testid="column"] {
     width: 100% !important;
+  }
+  [data-testid="stHorizontalBlock"]:has(.kbox-v2) [data-testid="column"],
+  .stHorizontalBlock:has(.kbox-v2) [data-testid="column"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
   }
 }
 
 /* Mobile landscape and generic screens (max-width: 768px) */
 @media (max-width: 768px) {
-  /* Force Streamlit standard multi-column layout blocks to stack vertically */
-  [data-testid="stHorizontalBlock"] {
+  /* Force Streamlit standard multi-column layout blocks to stack vertically and take 100% width */
+  [data-testid="stHorizontalBlock"],
+  .stHorizontalBlock {
     flex-direction: column !important;
+    display: flex !important;
     gap: 1.2rem !important;
-  }
-  [data-testid="stHorizontalBlock"] > [data-testid="column"] {
     width: 100% !important;
+  }
+  [data-testid="stHorizontalBlock"] [data-testid="column"],
+  .stHorizontalBlock [data-testid="column"],
+  [data-testid="stHorizontalBlock"] > div,
+  .stHorizontalBlock > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    flex: 1 1 100% !important;
+    display: block !important;
   }
 
   .title {
-    font-size: 2.3rem !important;
+    font-size: 2.1rem !important;
     letter-spacing: -1.2px !important;
+    line-height: 1.1 !important;
   }
   .subtitle {
-    font-size: 0.98rem !important;
+    font-size: 0.95rem !important;
   }
   .hero {
-    padding: 1rem 0 0.6rem;
+    padding: 0.8rem 0 0.4rem;
   }
 }
 
 /* Mobile portrait Breakpoint (max-width: 640px) */
 @media (max-width: 640px) {
   .block-container {
-    padding: 0.4rem 1.1rem 2rem!important;
+    padding: 0.4rem 1rem 2rem!important;
   }
   
   /* Top Custom Nav bar mobile spacing adjustment */
   .top-nav {
-    padding: 0.5rem 1.1rem!important;
-    margin-left: -1.1rem!important;
-    margin-right: -1.1rem!important;
+    padding: 0.5rem 1rem!important;
+    margin-left: -1rem!important;
+    margin-right: -1rem!important;
     margin-bottom: 0.6rem!important;
   }
   .logo-text {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
   }
   
-  /* Responsive Scorecard Grid (2 columns on mobile portrait for clean fit) */
-  [data-testid="stHorizontalBlock"]:has(.kbox-v2) {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 0.75rem !important;
+  /* Responsive Scorecard Grid (1 column on small phones for perfect spacing and full-width) */
+  [data-testid="stHorizontalBlock"]:has(.kbox-v2),
+  .stHorizontalBlock:has(.kbox-v2) {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
+    width: 100% !important;
+  }
+  [data-testid="stHorizontalBlock"]:has(.kbox-v2) [data-testid="column"],
+  .stHorizontalBlock:has(.kbox-v2) [data-testid="column"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
   }
   
   .kbox-v2 {
-    min-height: 105px !important;
-    padding: 0.9rem 0.8rem 0.7rem!important;
+    min-height: 110px !important;
+    padding: 1.1rem 1rem 0.9rem!important;
+    box-sizing: border-box !important;
+    width: 100% !important;
   }
   .kbox-val {
-    font-size: 1.55rem !important;
+    font-size: 2.1rem !important;
   }
   .kbox-title {
-    font-size: 0.58rem !important;
-    letter-spacing: 0.5px !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.8px !important;
   }
   .kbox-status {
-    font-size: 0.7rem !important;
+    font-size: 0.82rem !important;
   }
   
   /* Swipeable Horizontal Scroll Tabs for Mobile UX */
@@ -1170,12 +1197,30 @@ p, span, label, div, .stMarkdown, h1, h2, h3, h4, li {
     font-size: 0.9rem !important;
   }
   
-  /* Result Complete Banner mobile spacing */
+  /* Result Complete Banner mobile spacing - full width and neatly aligned */
   .analysis-complete-banner {
-    padding: 0.8rem 1.1rem!important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
+    padding: 1rem 1.2rem!important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .banner-left {
+    display: flex !important;
+    align-items: center !important;
     gap: 12px !important;
+  }
+  .banner-icon-circle {
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+  }
+  .banner-title {
+    font-size: 0.95rem !important;
+  }
+  .banner-subtitle {
+    font-size: 0.78rem !important;
   }
   .banner-vector-box {
     display: none !important; /* Hide secondary graphics on mobile to maximize viewport area */
