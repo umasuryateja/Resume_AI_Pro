@@ -1,0 +1,16 @@
+# Render Blueprint for automated deployment
+services:
+  - type: web
+    name: resume-ai-pro
+    env: python
+    plan: free
+    region: oregon # default region, can be changed in Render dashboard
+    branch: main
+    
+    # Render sets $PORT dynamically, and Streamlit reads the port argument
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+
+    # Optional: If you want to use the Dockerfile instead of native Python, 
+    # uncomment the block below and comment out buildCommand & startCommand:
+    # env: docker

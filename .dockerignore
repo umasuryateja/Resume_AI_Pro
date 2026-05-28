@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Virtual environments
+.venv
+venv
+env
+ENV
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local user/testing data
+data/model.pkl
+notebooks/
+.streamlit/secrets.toml
+tests/
+
+# Operating system files
+.DS_Store
+Thumbs.db
