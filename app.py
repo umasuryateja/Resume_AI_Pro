@@ -1228,9 +1228,65 @@ p, span, label, div, .stMarkdown, h1, h2, h3, h4, li {
     display: none !important; /* Hide secondary graphics on mobile to maximize viewport area */
   }
 }
+
+/* ── PREMIUM SaaS FOOTER CREDIT ── */
+.app-footer {
+  margin-top: 3.5rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1rem !important;
+  text-align: center !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.footer-line {
+  width: 100% !important;
+  max-width: 600px !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.25), rgba(139, 92, 246, 0.25), transparent) !important;
+  margin-bottom: 1.2rem !important;
+}
+.footer-text {
+  font-size: 0.78rem !important;
+  color: #8F9CAE !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+  opacity: 0.75 !important;
+  transition: all 0.3s ease !important;
+}
+.footer-author {
+  color: #E5E7EB !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+.app-footer:hover .footer-text {
+  opacity: 1 !important;
+  color: #FFFFFF !important;
+}
+.app-footer:hover .footer-author {
+  color: #60A5FA !important;
+  text-shadow: 0 0 8px rgba(96, 165, 250, 0.55) !important;
+}
+@media (max-width: 480px) {
+  .footer-text {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.2px !important;
+  }
+}
 </style>
 
 """, unsafe_allow_html=True)
+
+FOOTER_HTML = """
+<div class="app-footer">
+  <div class="footer-line"></div>
+  <div class="footer-text">
+    ResumeAI Pro &copy; 2026 &bull; Developed by <span class="footer-author">Jakka Uma Surya Teja</span>
+  </div>
+</div>
+"""
 
 
 @st.cache_resource(show_spinner=False)
@@ -1320,10 +1376,12 @@ with right:
           <div class="empty-s">Upload a resume to get started →</div>
         </div>
         """, unsafe_allow_html=True)
+        st.markdown(FOOTER_HTML, unsafe_allow_html=True)
         st.stop()
 
     if uploaded and not analyze:
         st.info("✅ Resume uploaded! Click **Analyze My Resume** to start the analysis.")
+        st.markdown(FOOTER_HTML, unsafe_allow_html=True)
         st.stop()
 
     # ── ANALYSIS ─────────────────────────────────────────────────────────────
@@ -1331,6 +1389,7 @@ with right:
         raw = extract_text_from_pdf(uploaded)
         if not raw or len(raw) < 50:
             st.error("❌ Could not extract text. Ensure the PDF has selectable text (not a scanned image).")
+            st.markdown(FOOTER_HTML, unsafe_allow_html=True)
             st.stop()
 
         model = get_model()
@@ -1641,3 +1700,6 @@ with right:
         wc_info = ats.get("word_count", {})
         st.markdown(f'<div style="color:#6B7280;font-size:.8rem;margin-bottom:.5rem;">📄 {wc_info.get("word_count",0)} words · {len(raw):,} characters extracted</div>', unsafe_allow_html=True)
         st.text_area("Extracted Resume Text", raw, height=380, label_visibility="collapsed")
+
+    # Render footer credit at the absolute bottom of results dashboard
+    st.markdown(FOOTER_HTML, unsafe_allow_html=True)
