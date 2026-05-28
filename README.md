@@ -15,14 +15,22 @@ ResumeAI Pro is a production-level, premium AI-powered resume analysis platform 
 
 ### 🖥️ Desktop Experience
 <p align="center">
-  <img src="assets/desktop_dashboard_full.png" width="90%" alt="ResumeAI Pro Desktop Dashboard" />
+  <img src="assets/desktop_landing.png" width="95%" alt="ResumeAI Pro Desktop Landing" />
+</p>
+<br>
+<p align="center">
+  <img src="assets/desktop_dashboard.png" width="95%" alt="ResumeAI Pro Desktop Dashboard" />
+</p>
+<br>
+<p align="center">
+  <img src="assets/desktop_footer.png" width="95%" alt="ResumeAI Pro Desktop Footer" />
 </p>
 
-### 📱 Mobile Stacking & Swipeable Tabs
+### 📱 Mobile Experience
 <p align="center">
-  <img src="assets/mobile_dashboard_tabs.png" width="45%" alt="ResumeAI Pro Mobile Dashboard View" />
+  <img src="assets/mobile_landing.jpg" width="45%" alt="ResumeAI Pro Mobile Landing" />
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/mobile_overview_metrics.jpg" width="45%" alt="ResumeAI Pro Mobile Analytics View" />
+  <img src="assets/mobile_dashboard.jpg" width="45%" alt="ResumeAI Pro Mobile Dashboard" />
 </p>
 
 ---
