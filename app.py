@@ -56,7 +56,7 @@ def get_status_details(lbl, val, has_jd):
             return "Needs Improvement", "#EF4444"
     return "Insufficient Data", "#3B82F6"
 
-st.set_page_config(page_title="ResumeAI Pro", page_icon="🚀", layout="wide")
+st.set_page_config(page_title="Resume AI Pro", page_icon="🚀", layout="wide")
 
 # ── FUTURISTIC MESH BACKGROUND & TOP NAV ──────────────────────────────────────
 st.markdown("""
@@ -107,7 +107,7 @@ st.markdown("""
         <path d="M 11,17 L 17,17" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
         <circle cx="21" cy="21" r="1.5" fill="#3B82F6"/>
       </svg>
-      <span class="logo-text">Resume<span class="logo-highlight">AI</span> Pro</span>
+      <span class="logo-text">Resume <span class="logo-highlight">AI</span> Pro</span>
     </div>
   </div>
 </div>
@@ -1227,7 +1227,7 @@ def bar(pct, color):
 st.markdown("""
 <div class="hero">
   <div class="badge">✦ AI-Powered Resume Intelligence</div>
-  <div class="title">ResumeAI Pro</div>
+  <div class="title">Resume AI Pro</div>
   <div class="subtitle">Upload your resume → Instant ATS score, role prediction, skill gap & smart feedback</div>
 </div>
 <hr class="divider">
