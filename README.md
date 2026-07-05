@@ -11,7 +11,7 @@ ResumeAI Pro is a production-level, premium AI-powered resume analysis platform 
 
 ---
 
-## 📸 Product Mockups & Screenshots
+## 📸 Product Mockups & Screenshots.
 
 ### 🖥️ Desktop Experience
 <p align="center">
