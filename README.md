@@ -82,7 +82,7 @@ To deliver a flawless user experience, the code uses a **Two-Stage rendering str
 
 ## 🚀 Installation & Local Setup
 
-Prerequisites: **Python 3.11.x** installed.
+Prerequisites: **Python 3.11.x** installed
 
 ### 1. Clone the repository
 ```bash
