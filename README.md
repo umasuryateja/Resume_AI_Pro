@@ -3,7 +3,7 @@
 [![Live Demo](https://img.shields.io/badge/Demo-Live_on_Render-blue?style=for-the-badge&logo=render&logoColor=white)](https://resume-ai-pro-d0by.onrender.com)
 [![Streamlit App](https://img.shields.io/badge/Built_with-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io)
 [![Python Version](https://img.shields.io/badge/Python-3.11.9-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE).
 
 ResumeAI Pro is a production-level, premium AI-powered resume analysis platform designed for modern recruiters and job seekers. Inspired by design languages like Vercel, Linear, and Stripe, it delivers a glassmorphic, responsive, and blazing-fast analytics dashboard to analyze resumes, predict job roles, measure keyword similarity against job descriptions, and extract personalized improvement suggestions.
 
