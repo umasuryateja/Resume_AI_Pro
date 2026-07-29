@@ -1,4 +1,4 @@
-# 🚀 ResumeAI Pro — Premium AI SaaS Resume Intelligence.
+# 🚀 ResumeAI Pro — Premium AI SaaS Resume Intelligence
 
 [![Live Demo](https://img.shields.io/badge/Demo-Live_on_Render-blue?style=for-the-badge&logo=render&logoColor=white)](https://resume-ai-pro-d0by.onrender.com)
 [![Streamlit App](https://img.shields.io/badge/Built_with-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io)
