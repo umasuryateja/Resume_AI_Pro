@@ -75,7 +75,7 @@ graph TD
 
 To deliver a flawless user experience, the code uses a **Two-Stage rendering strategy**:
 1. **Landing Stage**: Renders the file uploader and instructions card with the premium horizontal gradient footer, using `st.stop()` to pause computation safely before models run.
-2. **Analysis Stage**: Triggers when a valid PDF is detected and analyzed, appending the footer at the very end of the completed tabs panels.
+2. **Analysis Stage**: Triggers when a valid PDF is detected and analyzed, appending the footer at the very end of the completed tabs panels
 
 ---
 
