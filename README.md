@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE) 
 
 ResumeAI Pro is a production-level, premium AI-powered resume analysis platform designed for modern recruiters and job seekers. Inspired by design languages like Vercel, Linear, and Stripe, it delivers a glassmorphic, responsive, and blazing-fast analytics dashboard to analyze resumes, predict job roles, measure keyword similarity against job descriptions, and extract personalized improvement suggestions.
-> **Live Demo:** [https://resume-ai-pro-d0by.onrender.com](https://resume-ai-pro-d0by.onrender.com)
+> **Live Demo:** [https://resume-ai-pro-d0by.onrender.com](https://resume-ai-pro-d0by.onrender.com) .
 
 ---
 
